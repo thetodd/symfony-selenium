@@ -14,5 +14,8 @@ docker-compose up -d
 docker-compose exec webapp /var/www/app/bin/phpunit -c /var/www/app/phpunit.xml.dist
 ```
 
-The tests are under the `tests` directory. For functional testing with selenium use `App\Tests\Functional\FunctionalTestCase`
+The tests are under the `tests` directory. For functional testing with selenium use `App\Tests\Functional\FunctionalTestcase`
 as base php class.
+
+### Running the app
+If you run docker-compose the app will automatically be available in your browser at `http://localhost/`.
