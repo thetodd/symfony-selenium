@@ -1,0 +1,20 @@
+version: '3'
+services:
+  webapp:
+    build: ./
+    image: selenium-test-app:latest
+    ports:
+      - "80:80"
+    restart: on-failure:5
+    volumes:
+      - "./:/var/www/app"
+    environment:
+      - DB_HOST=adxdatabase
+
+  chrome:
+    image: selenium/standalone-chrome
+    ports:
+     - "4444:4444"
+    volumes:
+    - /dev/shm:/dev/shm # Mitigates the Chromium issue described at https://code.google.com/p/chromium/issues/detail?id=519952
+    
